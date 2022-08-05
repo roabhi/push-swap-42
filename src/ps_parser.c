@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ps_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 17:03:22 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/05 19:45:16 by rabril-h         ###   ########.fr       */
+/*   Created: 2022/06/15 20:47:07 by rabril-h          #+#    #+#             */
+/*   Updated: 2022/08/05 19:45:17 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	main(int i, char **params)
+// int	already_in()
+// {
+// 	return (0);
+// }
+
+void	ps_parser(int i, char **params)
 {
-	ps_parser(i, params);
-	ps_stacks_maker(i, params);
-	// Insert stacks into game
-	return (0);
+	int	c;
+
+	c = 1;
+	i--;
+	if (i == 0)
+		ps_errors("");
+	ft_putnbr_fd(i, 1);
+	ft_putstr_fd("\n\n", 1);
+	while (c <= i)
+	{
+		ft_putnbr_fd(ft_atoi(params[c]), 1);
+		if (ft_isalpha((int)params[c]))
+			ps_errors("Please do not include letters");
+		ft_putchar_fd('\n', 1);
+		ft_putchar_fd('\n', 1);
+		ft_putchar_fd('\n', 1);
+		c++;
+	}
 }

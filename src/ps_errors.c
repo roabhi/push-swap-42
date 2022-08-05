@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ps_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 17:03:22 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/05 19:45:16 by rabril-h         ###   ########.fr       */
+/*   Created: 2022/06/16 18:05:17 by rabril-h          #+#    #+#             */
+/*   Updated: 2022/06/16 18:08:11 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	main(int i, char **params)
+void	ps_errors(char *msg)
 {
-	ps_parser(i, params);
-	ps_stacks_maker(i, params);
-	// Insert stacks into game
-	return (0);
+	ft_putstr_fd(msg, 2);
+	exit(-1);
 }
