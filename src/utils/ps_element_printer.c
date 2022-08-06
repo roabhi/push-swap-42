@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_movements.c                                     :+:      :+:    :+:   */
+/*   ps_element_printer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 19:13:55 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/05 19:51:38 by rabril-h         ###   ########.fr       */
+/*   Created: 2022/08/06 15:02:14 by rabril-h          #+#    #+#             */
+/*   Updated: 2022/08/06 19:12:30 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-void	ps_pb(t_stack stack_a, t_stack stack_b)
+void	ps_element_printer(t_stack *stack, char *name, int index)
 {
-	int counter;
-    
-    counter = 0;
-	while (counter < stack_a.length)
-	{
-		ft_putnbr_fd(stack_a.array[counter]->value, 1);
-		write(1, "/", 1);
-		counter++;
-	}
-
-    ft_putstr_fd("El stack b tiene una longitud de ", 1);
-	ft_putnbr_fd(stack_b.length, 1);
-	write(1, "\n", 1);
+	write(1, "\n--------------------\n", 22);
+	ft_putstr_fd("El elemento ", 1);
+	ft_putnbr_fd(index, 1);
+	ft_putstr_fd(" del stack ", 1);
+	ft_putstr_fd(name, 1);
+	ft_putstr_fd(" es -> ", 1);
+	ft_putnbr_fd(stack->array[index]->value, 1);
+	write(1, "\n\n", 2);
 }

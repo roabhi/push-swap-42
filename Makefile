@@ -2,11 +2,13 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
-SRC = src/push_swap.c \
+SRC = src/utils/ps_stack_printer.c \
+		src/utils/ps_element_printer.c \
+		src/push_swap.c \
 		src/ps_parser.c \
 		src/ps_errors.c \
 		src/ps_stacks_maker.c \
-		src/ps_movements.c 
+		src/movements/ps_push.c 
 
 
 LIBFT = libft/libft.a
