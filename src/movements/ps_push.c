@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:51:19 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/06 18:29:55 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/09 18:31:26 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 void	ps_pb(t_stack *stack_a, t_stack *stack_b)
 {
-	//t_element *temp;
-
-	write(1, "ps", 2);
-	
-	// ps_stack_printer(stack_a, "a");
-	// ps_stack_printer(stack_b, "b");
+	write(1, "ps_b\n\n", 5);
 	if (stack_a->array[0] == NULL)
 		return;
-	stack_b->array[0] = stack_a->array[0];
+	stack_b->array[stack_b->length] = stack_a->array[stack_a->length - 1];
 	stack_a->length--;
-	stack_b->length++;	
+	stack_b->length++;
+}
 
-	// ps_stack_printer(stack_a, "a");
-	// ps_stack_printer(stack_b, "b");
+void	ps_pa(t_stack *stack_a, t_stack *stack_b)
+{
+	write(1, "ps_a\n\n", 2);
+	if (stack_b->array[0] == NULL)
+		return;
+	stack_a->array[stack_a->length] = stack_b->array[stack_b->length - 1];
+	stack_b->length--;
+	stack_a->length++;
 }
