@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:01:00 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/12 22:04:27 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/14 15:24:10 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ void	ps_pb(t_stack *stack_a, t_stack *stack_b);
 void	ps_ra(t_stack *stack_a);
 void	ps_rb(t_stack *stack_b);
 void	ps_rr(t_stack *stack_a, t_stack *stack_b);
+void	ps_rra(t_stack *stack_a);
+void	ps_rrb(t_stack *stack_b);
+void	ps_rrr(t_stack *stack_a, t_stack *stack_b);
 void	ps_stack_printer(t_stack *stack, char *name);
 void	ps_element_printer(t_stack *stack, char *name, int index);
 
