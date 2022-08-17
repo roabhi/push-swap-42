@@ -6,16 +6,11 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 20:47:07 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/06 14:41:41 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:52:01 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-// int	already_in()
-// {
-// 	return (0);
-// }
 
 void	ps_parser(int i, char **params)
 {
@@ -25,17 +20,20 @@ void	ps_parser(int i, char **params)
 	c = 1;
 	i--;
 	if (i == 0)
-		ps_errors("");
-	// ft_putnbr_fd(i, 1);
+		ps_errors("\n Error: No params\n");	
 	// ft_putstr_fd("\n\n", 1);
-	// while (c <= i)
-	// {
-	// 	ft_putnbr_fd(ft_atoi(params[c]), 1);
-	// 	if (ft_isalpha((int)params[c]))
-	// 		ps_errors("Please do not include letters");
-	// 	ft_putchar_fd('\n', 1);
-	// 	ft_putchar_fd('\n', 1);
-	// 	ft_putchar_fd('\n', 1);
-	// 	c++;
-	// }
+	while (c <= i)
+	{
+		if (ft_strlen(params[c]) == 0)
+			ps_errors("\n Error: ");
+		// if (ft_atoi(params[c]) == 0)
+		// 	ps_errors("\n Error: Only numbers\n");
+		// if (ft_isalpha((int)params[c]))
+		// 	ps_errors("Please do not include letters");
+		// ps_check_already(params, c, i);		
+		// ft_putchar_fd('\n', 1);
+		// ft_putchar_fd('\n', 1);
+		// ft_putchar_fd('\n', 1);
+		c++;
+	}
 }
