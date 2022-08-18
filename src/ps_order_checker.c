@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:29:26 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/17 18:55:39 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/18 17:20:42 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ void	ps_num_is_repeated(t_stack *stack)
 			}
 			c2++;			
 		}
-		write(1, "\n\n", 2);
+		// write(1, "\n\n", 2);
 		c1++;
 	}
 }
 
-void	ps_order_checker(t_stack *stack)
+int	ps_order_checker(t_stack *stack)
 {
 	int	is_in_order;
 	int	counter;
@@ -56,11 +56,11 @@ void	ps_order_checker(t_stack *stack)
 			is_in_order = 1;
 		counter++;
 	}
-	if (is_in_order == 1)
-	{
-		ft_putstr_fd("\nEl stack esta en orden\n", 1);
-		ps_errors("");
-	}		
+	if (is_in_order == 1)		
+		return (1);
 	else
+	{
 		ft_putstr_fd("\nEl stack NO esta en orden. El programa continua\n", 1);
+		return (0);
+	}		
 }
