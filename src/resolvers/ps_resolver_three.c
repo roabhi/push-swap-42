@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 17:30:33 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/20 20:59:34 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/20 22:35:06 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ps_resolver_three(t_stack *stack)
 	ft_putstr_fd("\nEl stack tiene 3 numeros\n\n", 1);
 	// ps_stack_printer(stack, "a");	
 
-	if (stack->array[0]->index < stack->array[1]->index 
-		&& stack->array[0]->index < stack->array[2]->index 
-		&& stack->array[1]->index > stack->array[2]->index)
+	if (stack->array[2]->index < stack->array[1]->index 
+		&& stack->array[2]->index < stack->array[0]->index 
+		&& stack->array[1]->index > stack->array[0]->index)
 	{
 		ft_putstr_fd("\nEl primer numero es el menor, el segundo debe ir despues del tercero\n", 1);
 		ps_sa(stack);
