@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:03:22 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/20 20:33:22 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/20 20:55:37 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ int	main(int i, char **params)
 	ps_stacks_maker(i, params, &game);	
 	if (ps_order_checker(&game.stack_a))
 		ps_errors("");
-	// ps_stack_printer(&game.stack_a, "a");
+	ps_stack_printer(&game.stack_a, "a");
 	// ps_sa(&game.stack_a);
-	// ps_algo_checker(&game);
+	ps_algo_checker(&game);
 	// ps_sa(&game.stack_a);
 	// ps_rra(&game.stack_a);
 	// ps_stack_printer(&game.stack_a, "a");
 	// ps_sa(&game.stack_a);	
-	// ps_stack_printer(&game.stack_a, "a");
+	ps_stack_printer(&game.stack_a, "a");
 	return (0);
 }

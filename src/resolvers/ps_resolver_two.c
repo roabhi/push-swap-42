@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 15:42:31 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/20 16:55:21 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/20 21:15:19 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void    ps_resolver_two(t_stack *stack)
 {
     ft_putstr_fd("\nEl stack tiene 2 numeros\n", 1);
-    if (stack->array[0]->index > stack->array[1]->index)
+    if (stack->array[0]->index < stack->array[1]->index)
         ps_sa(stack);
 }
