@@ -6,23 +6,24 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 17:30:33 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/18 18:45:47 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/20 17:48:34 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ps_resolver_three(t_game *game)
+void	ps_resolver_three(t_stack *stack)
 {
-	ft_putstr_fd("\nEl stack tiene 3 numeros", 1);
-	ps_stack_printer(&game->stack_a, "a");	
+	ft_putstr_fd("\nEl stack tiene 3 numeros\n\n", 1);
+	// ps_stack_printer(stack, "a");	
 
-	if (game->stack_a.array[0]->index < game->stack_a.array[1]->index && game->stack_a.array[0]->index < game->stack_a.array[2]->index && game->stack_a.array[1]->index > game->stack_a.array[2]->index)
+	if (stack->array[0]->index < stack->array[1]->index 
+		&& stack->array[0]->index < stack->array[2]->index 
+		&& stack->array[1]->index > stack->array[2]->index)
 	{
-		ps_sa(&game->stack_a);
-		
-		// ps_rra(&game->stack_a);
-		ps_stack_printer(&game->stack_a, "a");		
+		ft_putstr_fd("\nEl primer numero es el menor, el segundo debe ir despues del tercero\n", 1);
+		ps_sa(stack);
+		ps_ra(stack);
 		
 	}
 	

@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 18:04:14 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/09 14:35:38 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/20 19:57:55 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,29 @@ void	ps_stacks_maker(int i, char **params, t_game *game)
 	t_stack	stack_b;
 	int		counter;
 
-	counter = 1;
 	i--;
+	counter = 0;	
 	//create stack a
 	stack_a.array = malloc(sizeof(t_element *) * (i));
 	if (!stack_a.array)
 		exit(-1);
 	stack_a.length = 0;
-	while (counter <= i)
+	while (i >= 1)
 	{
-		stack_a.array[counter - 1] = malloc(sizeof(t_element) * (i));
-		stack_a.array[counter - 1]->value = ft_atoi(params[counter]);
+		
+		stack_a.array[counter] = malloc(sizeof(t_element) * 1);
+		stack_a.array[counter]->value = ft_atoi(params[i]);
 		stack_a.length++;
+		// ft_putnbr_fd(ft_atoi(params[counter]), 1);
 		counter++;
+		i--;
 	}
-	// counter = 0;
-	// while (counter < stack_a.length)
+	// counter = stack_a.length - 1;
+	// while (counter >= 0)
 	// {
 	// 	ft_putnbr_fd(stack_a.array[counter]->value, 1);
 	// 	write(1, "/", 1);
-	// 	counter++;
+	// 	counter--;
 	// }
 	// write(1, "\n", 1);
 	// ft_putstr_fd("El stack a tiene una longitud de ", 1);

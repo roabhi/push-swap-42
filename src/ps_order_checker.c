@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:29:26 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/18 17:20:42 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/20 20:45:56 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,17 @@ int	ps_order_checker(t_stack *stack)
 	int	is_in_order;
 	int	counter;
 	
-	counter = 0;
+	counter = stack->length - 1;
 	is_in_order = 0;	
 	ps_num_is_repeated(stack);
-	while (counter < stack->length - 1)
+	while (counter > 0)
 	{
-		if (stack->array[counter]->index > stack->array[counter + 1]->index)
+		if (stack->array[counter]->index > stack->array[counter - 1]->index)
 			is_in_order = 0;
 		else if	(stack->array[counter]->index <
-			stack->array[counter + 1]->index)
+			stack->array[counter - 1]->index)
 			is_in_order = 1;
-		counter++;
+		counter--;
 	}
 	if (is_in_order == 1)		
 		return (1);
