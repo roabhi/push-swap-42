@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 18:04:14 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/20 19:57:55 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/22 13:15:27 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,5 @@ void	ps_stacks_maker(int i, char **params, t_game *game)
 	game->stack_a = stack_a;
 	game->stack_b = stack_b;
 	ps_stack_orderer(game);
-	//ps_stack_printer(&game->stack_a, "a");
+	// ps_stack_printer(&game->stack_a, "a");
 }

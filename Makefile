@@ -9,11 +9,13 @@ SRC = src/utils/ps_stack_printer.c \
 		src/ps_errors.c \
 		src/ps_stacks_maker.c \
 		src/ps_order_checker.c \
+		src/helpers/ps_min_max_finder.c \
 		src/movements/ps_push.c \
 		src/movements/ps_rotate.c \
 		src/movements/ps_reverse_rotate.c \
 		src/resolvers/ps_resolver_two.c \
 		src/resolvers/ps_resolver_three.c \
+		src/resolvers/ps_resolver_five.c \
 		src/movements/ps_swap.c 
 
 

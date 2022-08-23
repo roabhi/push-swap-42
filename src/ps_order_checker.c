@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:29:26 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/20 20:45:56 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/22 16:58:53 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	ps_num_is_repeated(t_stack *stack)
 			}
 			c2++;			
 		}
-		// write(1, "\n\n", 2);
 		c1++;
 	}
 }
@@ -49,18 +48,28 @@ int	ps_order_checker(t_stack *stack)
 	ps_num_is_repeated(stack);
 	while (counter > 0)
 	{
+		// if (stack->array[counter]->index < stack->array[counter + 1]->index)
+		// 	is_in_order = 0;
+		// else if	(stack->array[counter]->index >
+		// 	stack->array[counter + 1]->index)
+		// {
+		// 	// is_in_order = 1;
+		// 	ft_putstr_fd("\nEl stack esta en orden\n", 1);
+		// 	return (1);
+		// 	break ;
+		// }			
+		// ft_putstr_fd("estoy mirando el index ", 1);
+		// ft_putnbr_fd(stack->array[counter]->index, 1);
+		// ft_putstr_fd("  el siguiente index es ", 1);
+		// ft_putnbr_fd(stack->array[counter - 1]->index, 1);
+		// write(1, "\n\n", 2);
 		if (stack->array[counter]->index > stack->array[counter - 1]->index)
-			is_in_order = 0;
-		else if	(stack->array[counter]->index <
-			stack->array[counter - 1]->index)
-			is_in_order = 1;
+		{
+			ft_putstr_fd("\n El stack esta desordenado. Continue... \n", 1);
+			return (0);
+		}			
 		counter--;
 	}
-	if (is_in_order == 1)		
-		return (1);
-	else
-	{
-		ft_putstr_fd("\nEl stack NO esta en orden. El programa continua\n", 1);
-		return (0);
-	}		
+	// ft_putstr_fd("\nEl stack esta en orden. Exit\n", 1);
+	return (1);
 }

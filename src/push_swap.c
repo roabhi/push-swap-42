@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:03:22 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/20 20:55:37 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/23 20:33:37 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	ps_algo_checker(t_game *game)
 	else if (game->stack_a.length == 3)
 	{
 		ps_resolver_three(&game->stack_a);
-	}else if (game->stack_a.length == 4)
+	}else if (game->stack_a.length == 5)
 	{
-		ft_putstr_fd("\nEl stack tiene 4 numeros", 1);
+		ps_resolver_five(&game->stack_a, &game->stack_b);
 	}
 
 }
@@ -46,5 +46,6 @@ int	main(int i, char **params)
 	// ps_stack_printer(&game.stack_a, "a");
 	// ps_sa(&game.stack_a);	
 	ps_stack_printer(&game.stack_a, "a");
+	ps_stack_printer(&game.stack_b, "b");
 	return (0);
 }

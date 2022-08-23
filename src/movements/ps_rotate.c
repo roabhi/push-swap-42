@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 18:08:13 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/20 22:34:29 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/08/22 17:28:56 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,23 @@ void	ps_ra(t_stack *stack_a)
 		stack_a->array[counter] = stack_a->array[counter - 1];
 		counter--;
 	}
-	// stack_a->array[0] = stack_a->array[stack_a->length - 1];
 	stack_a->array[0] = temp;
-
 }
 
 void	ps_rb(t_stack *stack_b)
 {
 	t_element	*temp;
+	int			counter;
 
 	write(1, "rb\n\n", 5);
+	counter = stack_b->length - 1;
 	temp = stack_b->array[stack_b->length - 1];
-	stack_b->array[stack_b->length - 1] = stack_b->array[0];
+	while (counter > 0)
+	{
+		stack_b->array[counter] = stack_b->array[counter - 1];
+		counter--;
+	}
 	stack_b->array[0] = temp;
-
 }
 
 void	ps_rr(t_stack *stack_a, t_stack *stack_b)
