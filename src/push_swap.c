@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:03:22 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/29 17:34:24 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/09/17 20:16:36 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	ps_algo_checker(t_game *game)
 	{
 		ps_resolver_five(&game->stack_a, &game->stack_b);
 	}
-
 }
 
 int	main(int i, char **params)

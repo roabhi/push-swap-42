@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 18:28:09 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/23 19:56:46 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/09/20 17:16:14 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ps_min_finder(t_stack *stack)
 	
 	min_ndx = 0;
 	counter = 0;
-	while (counter < stack->length - 1)
+	while (counter < stack->length)
 	{
 		// ft_putstr_fd("\nEl elemento actual es ", 1);
 		// ft_putnbr_fd(stack->array[counter]->value, 1);
@@ -48,7 +48,7 @@ int	ps_min_finder(t_stack *stack)
 			min_ndx = counter;
 		counter++;
 	}
-	// ft_putstr_fd("\nEl numero menos es ", 1);
-	// ps_element_printer(stack, "a", min_ndx);
+	ft_putstr_fd("\nEl numero menos es ", 1);
+	ps_element_printer(stack, "a", min_ndx);
 	return (min_ndx);
 }
