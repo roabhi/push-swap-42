@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 17:20:54 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/09/20 18:12:19 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/09/21 17:14:09 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,45 @@ void	ps_resolver_five(t_stack *stack_a, t_stack *stack_b)
 		{
 			ps_pb(stack_a, stack_b);			
 		}
-		else if (ps_min_finder(stack_a) == stack_a->length - 2)
+		else
 		{
-			ps_sa(stack_a);
-			ps_pb(stack_a,stack_b);
+			ps_rra(stack_a);
 		}
-		else if(ps_min_finder(stack_a) == 1)
-		{
-			ps_rra(stack_a);
-			ps_rra(stack_a);
-			ps_pb(stack_a, stack_b);
+		// else if (ps_min_finder(stack_a) == stack_a->length - 2)
+		// {
+		// 	ps_sa(stack_a);
+		// 	ps_pb(stack_a,stack_b);
+		// }
+		// else if(ps_min_finder(stack_a) == stack_a->length - 3)
+		// {
+		// 	if (stack_a->length > 4)
+		// 		ps_rra(stack_a);
+		// 	else
+		// 	{
+		// 		ps_rra(stack_a);
+		// 		ps_rra(stack_a);
+		// 	}			
+		// 	ps_pb(stack_a, stack_b);
 			
-		}
-		else if(ps_min_finder(stack_a) == 0)
-		{
-			ps_rra(stack_a);
-			ps_pb(stack_a, stack_b);			
-		}
-		else 
-		{
-			write(1, "\n==========================\n", 30);
-			ps_stack_printer(stack_a, "a");
-			ps_stack_printer(stack_b, "b");
-			exit(0);
-		}		
+		// }
+		// else if(ps_min_finder(stack_a) == 0)
+		// {
+		// 	// if (stack_a->length > 4)
+		// 	// 	ps_rra(stack_a);
+		// 	ps_rra(stack_a);
+		// 	ps_pb(stack_a, stack_b);			
+		// }
+		// else 
+		// {
+		// 	write(1, "\n=========== fail ===============\n", 30);
+		// 	ps_stack_printer(stack_a, "a");
+		// 	ps_stack_printer(stack_b, "b");
+		// 	exit(0);
+		// }		
 	}
+	ps_resolver_three(stack_a);
+	ps_pa(stack_a, stack_b);
+	ps_pa(stack_a, stack_b);
 	
 	
 	

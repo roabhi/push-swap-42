@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 18:28:09 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/09/20 17:16:14 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/09/21 17:00:36 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ps_min_finder(t_stack *stack)
 			min_ndx = counter;
 		counter++;
 	}
-	ft_putstr_fd("\nEl numero menos es ", 1);
-	ps_element_printer(stack, "a", min_ndx);
+	// ft_putstr_fd("\nEl numero menos es ", 1);
+	// ps_element_printer(stack, "a", min_ndx);
 	return (min_ndx);
 }

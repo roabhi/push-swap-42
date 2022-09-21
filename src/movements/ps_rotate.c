@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 18:08:13 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/22 17:28:56 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/09/21 17:15:53 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ps_ra(t_stack *stack_a)
 	t_element	*temp;
 	int			counter;
 
-	write(1, "ra\n\n", 5);
+	write(1, "\nra\n\n", 5);
 	counter = stack_a->length - 1;
 	temp = stack_a->array[stack_a->length - 1];
 	while (counter > 0)
@@ -33,7 +33,7 @@ void	ps_rb(t_stack *stack_b)
 	t_element	*temp;
 	int			counter;
 
-	write(1, "rb\n\n", 5);
+	write(1, "\nrb\n\n", 5);
 	counter = stack_b->length - 1;
 	temp = stack_b->array[stack_b->length - 1];
 	while (counter > 0)
