@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:29:26 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/22 16:58:53 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/09/26 16:10:47 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	ps_order_checker(t_stack *stack)
 		// write(1, "\n\n", 2);
 		if (stack->array[counter]->index > stack->array[counter - 1]->index)
 		{
-			ft_putstr_fd("\n El stack esta desordenado. Continue... \n", 1);
+			// ft_putstr_fd("\n El stack esta desordenado. Continue... \n", 1);
 			return (0);
 		}			
 		counter--;
