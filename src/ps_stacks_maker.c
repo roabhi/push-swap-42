@@ -6,13 +6,13 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 18:04:14 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/08/22 13:15:27 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:30:20 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ps_stack_orderer(t_game *game)
+void	ps_stack_orderer(t_stack *stack)
 {
 	int	c1;
 	int	c2;
@@ -21,17 +21,17 @@ void	ps_stack_orderer(t_game *game)
 	c1 = 0;
 	c2 = 0;
 	ndx = 0;
-	while (c1 < game->stack_a.length)
+	while (c1 < stack->length)
 	{
 		c2 = 0;
 		ndx = 0;
-		while (c2 < game->stack_a.length)
+		while (c2 < stack->length)
 		{
-			if (game->stack_a.array[c2]->value < game->stack_a.array[c1]->value)
+			if (stack->array[c2]->value < stack->array[c1]->value)
 				ndx++;
 			c2++;			
 		}
-		game->stack_a.array[c1]->index = ndx;
+		stack->array[c1]->index = ndx;
 		c1++;
 	}
 }
@@ -81,6 +81,6 @@ void	ps_stacks_maker(int i, char **params, t_game *game)
 	// write(1, "\n", 1);
 	game->stack_a = stack_a;
 	game->stack_b = stack_b;
-	ps_stack_orderer(game);
+	ps_stack_orderer(&stack_a);
 	// ps_stack_printer(&game->stack_a, "a");
 }

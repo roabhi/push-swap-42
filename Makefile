@@ -4,6 +4,7 @@ CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 SRC = src/utils/ps_stack_printer.c \
 		src/utils/ps_element_printer.c \
+		src/helpers/ps_stack_cleaner.c \
 		src/push_swap.c \
 		src/ps_parser.c \
 		src/ps_errors.c \
@@ -16,6 +17,7 @@ SRC = src/utils/ps_stack_printer.c \
 		src/resolvers/ps_resolver_two.c \
 		src/resolvers/ps_resolver_three.c \
 		src/resolvers/ps_resolver_five.c \
+		src/resolvers/ps_big_resolver.c \
 		src/movements/ps_swap.c 
 
 

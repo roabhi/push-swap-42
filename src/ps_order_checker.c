@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:29:26 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/09/26 16:10:47 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/10 19:47:28 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,13 @@ void	ps_num_is_repeated(t_stack *stack)
 			{
 				already++;
 				if (already > 1)
+				{
+					ft_putnbr_fd(stack->array[c2]->value, 1);
+					write(1, "\n\n", 2);
 					ps_errors("\nError: Repited number");
+					
+				}
+					
 			}
 			c2++;			
 		}

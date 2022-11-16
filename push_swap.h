@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:01:00 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/09/17 20:25:53 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/13 23:42:00 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ typedef struct s_stack {
 typedef struct s_game {
 	t_stack	stack_a;
 	t_stack	stack_b;
+	int		chunk_size;
 }	t_game;
 
 void	ps_parser(int i, char **params);
 void	ps_stacks_maker(int i, char **params, t_game *game);
 int		ps_order_checker(t_stack *stack);
+void	ps_stack_orderer(t_stack *stack);
 void	ps_errors(char *msg);
 void	ps_sa(t_stack *stack_a);
 void	ps_sb(t_stack *stack_b);
@@ -59,5 +61,7 @@ void	ps_min_2_top(int pos);
 void	ps_resolver_two(t_stack *stack);
 void	ps_resolver_three(t_stack *stack);
 void	ps_resolver_five(t_stack *stack_a, t_stack *stack_b);
+void	ps_big_resolver(t_game *game, int chucks);
+void	ps_stack_cleaner(t_game *game);
 
 #endif
