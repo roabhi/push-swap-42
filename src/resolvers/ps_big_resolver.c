@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:25:42 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/16 20:19:18 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/17 20:55:08 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,25 @@ void	smart_put_number_in_top(t_game *game, int search_num)
 	{
 		while (game->stack_b.array[game->stack_b.length - 1]->index !=  search_num)
 		{
-			ps_rb(&game->stack_b);
+			if(game->stack_b.array[game->stack_b.length - 1]->index ==  search_num - 1)
+			{
+				ps_pa(&game->stack_a, &game->stack_b);
+			}
+			else
+				ps_rb(&game->stack_b);
+			
 		}
 	}
 	else if(dir == 2)
 	{
 		while (game->stack_b.array[game->stack_b.length - 1]->index !=  search_num)
 		{
-			ps_rrb(&game->stack_b);
+			if(game->stack_b.array[game->stack_b.length - 1]->index ==  search_num - 1)
+			{
+				ps_pa(&game->stack_a, &game->stack_b);
+			}
+			else
+				ps_rrb(&game->stack_b);
 		}
 	}
 	ps_pa(&game->stack_a, &game->stack_b);
@@ -78,7 +89,7 @@ void	ps_big_resolver(t_game *game, int chunks)
 	s_length = game->stack_a.length - 1;
 	limit = game->stack_a.length / chunks;
 
-	while (c1 < chunks)
+	while (c1 <= chunks)
 	{
 		c2 = 0;
 		while (c2 < limit)
@@ -86,6 +97,8 @@ void	ps_big_resolver(t_game *game, int chunks)
 			if(game->stack_a.array[game->stack_a.length - 1]->index < limit)
 			{
 				ps_pb(&game->stack_a, &game->stack_b);
+				if (game->stack_b.array[game->stack_b.length - 1]->index <  limit / 2)
+					ps_rb(&game->stack_b);
 				c2++;
 				
 			}
@@ -102,7 +115,10 @@ void	ps_big_resolver(t_game *game, int chunks)
 
 	while (s_length >= 0)
 	{
-		smart_put_number_in_top(game, s_length);				
+		if(game->stack_a.length >= 2 && game->stack_a.array[game->stack_a.length - 2]->index  == s_length)
+			ps_sa(&game->stack_a);
+		else
+			smart_put_number_in_top(game, s_length);				
 		s_length--;
 	}
 

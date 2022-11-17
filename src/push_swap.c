@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:03:22 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/15 17:55:02 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/17 20:44:32 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ps_algo_checker(t_game *game)
 		if (game->stack_a.length <= 100)
 			chunks = 5;
 		else
-			chunks = 7;
+			chunks = 8;
 		ps_big_resolver(game, chunks);
 	}
 }
