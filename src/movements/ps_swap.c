@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 22:05:52 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/09/26 16:16:27 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/24 20:19:39 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ps_sa(t_stack *stack_a)
 	t_element	*temp;
 
 	write(1, "sa\n", 3);
-	// if (stack_a->array[stack_a->length] == NULL || stack_a->array[stack_a->length - 1] == NULL)
-	// 	return ;
 	temp = stack_a->array[stack_a->length - 1];
 	stack_a->array[stack_a->length - 1] = stack_a->array[stack_a->length - 2];
 	stack_a->array[stack_a->length - 2] = temp;

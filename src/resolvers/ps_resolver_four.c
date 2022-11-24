@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_resolver_two.c                                  :+:      :+:    :+:   */
+/*   ps_resolver_four.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/20 15:42:31 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/24 19:44:11 by rabril-h         ###   ########.fr       */
+/*   Created: 2022/11/24 14:24:57 by rabril-h          #+#    #+#             */
+/*   Updated: 2022/11/24 19:49:12 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ps_resolver_two(t_stack *stack)
+void	ps_resolver_four(t_stack *stack_a, t_stack *stack_b)
 {
-	if (stack->array[0]->index < stack->array[1]->index)
-		ps_sa(stack);
+	while (0 < stack_a->length - 3)
+	{
+		if (ps_min_finder(stack_a) == stack_a->length - 1)
+			ps_pb(stack_a, stack_b);
+		else if (ps_min_finder(stack_a) == 0)
+			ps_rra(stack_a);
+		else
+			ps_ra(stack_a);
+	}
+	ps_resolver_three(stack_a);
+	ps_pa(stack_a, stack_b);
 }

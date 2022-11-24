@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 18:04:14 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/10 18:30:20 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/24 16:37:01 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,43 +44,24 @@ void	ps_stacks_maker(int i, char **params, t_game *game)
 
 	i--;
 	counter = 0;	
-	//create stack a
 	stack_a.array = malloc(sizeof(t_element *) * (i));
 	if (!stack_a.array)
 		exit(-1);
 	stack_a.length = 0;
 	while (i >= 1)
-	{
-		
+	{		
 		stack_a.array[counter] = malloc(sizeof(t_element) * 1);
 		stack_a.array[counter]->value = ft_atoi(params[i]);
 		stack_a.length++;
-		// ft_putnbr_fd(ft_atoi(params[counter]), 1);
 		counter++;
 		i--;
 	}
-	// counter = stack_a.length - 1;
-	// while (counter >= 0)
-	// {
-	// 	ft_putnbr_fd(stack_a.array[counter]->value, 1);
-	// 	write(1, "/", 1);
-	// 	counter--;
-	// }
-	// write(1, "\n", 1);
-	// ft_putstr_fd("El stack a tiene una longitud de ", 1);
-	// ft_putnbr_fd(stack_a.length, 1);
-	// write(1, "\n", 1);
-	//create stack b
 	stack_b.array = malloc(sizeof(t_element *) * stack_a.length);
 	stack_b.array[0] = NULL;
 	stack_b.length = 0;
 	if (!stack_b.array)
 		exit(-1);
-	// ft_putstr_fd("El stack b tiene una longitud de ", 1);
-	// ft_putnbr_fd(stack_b.length, 1);
-	// write(1, "\n", 1);
 	game->stack_a = stack_a;
 	game->stack_b = stack_b;
 	ps_stack_orderer(&stack_a);
-	// ps_stack_printer(&game->stack_a, "a");
 }
