@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 18:28:09 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/24 19:43:46 by rabril-h         ###   ########.fr       */
+/*   Created: 2022/11/27 18:43:41 by rabril-h          #+#    #+#             */
+/*   Updated: 2022/11/27 18:43:43 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ps_min_finder(t_stack *stack)
 {
 	int	counter;
 	int	min_ndx;
-	
+
 	min_ndx = 0;
 	counter = 0;
 	while (counter < stack->length)

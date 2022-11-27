@@ -26,7 +26,7 @@ SRC = src/utils/ps_stack_printer.c \
 LIBFT = libft/libft.a
 OBJ = $(SRC:.c=.o)
 
-%.o:%.c
+%.o:%.c push_swap.h
 		${CC} ${CFLAGS} -I libft/ -c $< -o $@
 
 all: makelibs ${NAME}

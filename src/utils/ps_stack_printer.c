@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:31:30 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/24 19:42:19 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:31:18 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ps_stack_printer(t_stack *stack, char *name)
 {
 	int	counter;
-	
+
 	counter = stack->length - 1;
 	write(1, "\nStack ", 8);
 	write(1, name, 1);

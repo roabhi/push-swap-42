@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 20:47:07 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/24 20:19:08 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:33:25 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ps_parser(int i, char **params)
 		}			
 		if (ps_atoi(params[c]) >= (long long int)2147483648
 			|| ps_atoi(params[c]) <= (long long int)-2147483649)
-			ps_errors("Error\n");						
+			ps_errors("Error\n");
 		c++;
 	}
 }

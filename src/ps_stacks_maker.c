@@ -6,7 +6,7 @@
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 18:04:14 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/24 16:37:01 by rabril-h         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:39:12 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,18 @@ void	ps_stack_orderer(t_stack *stack)
 		{
 			if (stack->array[c2]->value < stack->array[c1]->value)
 				ndx++;
-			c2++;			
+			c2++;
 		}
 		stack->array[c1]->index = ndx;
 		c1++;
 	}
+}
+
+void	ps_stacks_maker_extra(t_stack stack_a, t_stack stack_b, t_game *game)
+{
+	game->stack_a = stack_a;
+	game->stack_b = stack_b;
+	ps_stack_orderer(&stack_a);
 }
 
 void	ps_stacks_maker(int i, char **params, t_game *game)
@@ -43,7 +50,7 @@ void	ps_stacks_maker(int i, char **params, t_game *game)
 	int		counter;
 
 	i--;
-	counter = 0;	
+	counter = 0;
 	stack_a.array = malloc(sizeof(t_element *) * (i));
 	if (!stack_a.array)
 		exit(-1);
@@ -61,7 +68,5 @@ void	ps_stacks_maker(int i, char **params, t_game *game)
 	stack_b.length = 0;
 	if (!stack_b.array)
 		exit(-1);
-	game->stack_a = stack_a;
-	game->stack_b = stack_b;
-	ps_stack_orderer(&stack_a);
+	ps_stacks_maker_extra(stack_a, stack_b, game);
 }

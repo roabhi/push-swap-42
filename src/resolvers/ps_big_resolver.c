@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 17:25:42 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/24 20:17:54 by rabril-h         ###   ########.fr       */
+/*   Created: 2022/11/27 18:57:50 by rabril-h          #+#    #+#             */
+/*   Updated: 2022/11/27 18:57:51 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	smart_rotate_best_dir(t_stack *stack, int search_num)
 {
 	int	count;
 	int	pos;
-	
+
 	count = stack->length - 1;
 	pos = 0;
 	while (count >= 0)
@@ -77,7 +77,7 @@ void	smart_put_number_in_top(t_game *game, int search_num)
 void	ps_big_resolver_extra(t_game *game, int limit)
 {
 	int	c2;
-	
+
 	c2 = 0;
 	while (c2 < limit)
 	{
@@ -118,7 +118,7 @@ void	ps_big_resolver(t_game *game, int chunks)
 			== s_length)
 			ps_sa(&game->stack_a);
 		else
-			smart_put_number_in_top(game, s_length);				
+			smart_put_number_in_top(game, s_length);
 		s_length--;
 	}
 }

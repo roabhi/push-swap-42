@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabril-h <rabril-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 17:30:33 by rabril-h          #+#    #+#             */
-/*   Updated: 2022/11/24 19:46:37 by rabril-h         ###   ########.fr       */
+/*   Created: 2022/11/27 19:22:57 by rabril-h          #+#    #+#             */
+/*   Updated: 2022/11/27 19:22:59 by rabril-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ps_resolver_three_extra(t_stack *stack)
 	{
 		ps_ra(stack);
 	}
-	else if (stack->array[0]->index < stack->array[1]->index 
-		&& stack->array[0]->index < stack->array[2]->index 
+	else if (stack->array[0]->index < stack->array[1]->index
+		&& stack->array[0]->index < stack->array[2]->index
 		&& stack->array[1]->index > stack->array[2]->index)
 	{
 		ps_rra(stack);
@@ -30,8 +30,8 @@ void	ps_resolver_three_extra(t_stack *stack)
 
 void	ps_resolver_three(t_stack *stack)
 {
-	if (stack->array[2]->index < stack->array[1]->index 
-		&& stack->array[2]->index < stack->array[0]->index 
+	if (stack->array[2]->index < stack->array[1]->index
+		&& stack->array[2]->index < stack->array[0]->index
 		&& stack->array[1]->index > stack->array[0]->index)
 	{
 		ps_sa(stack);
